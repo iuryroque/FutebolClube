@@ -33,7 +33,7 @@ const getById = async (userId, Id) => {
     include: [
       { model: User, as: 'user', attributes: { exclude: ['password'] } },
       {
-        model: Categories,
+        model: Category,
         as: 'categories',
         through: { attributes: [] },
       },
