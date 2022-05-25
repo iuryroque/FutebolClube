@@ -6,7 +6,6 @@ const getAll = async () => {
 };
 
 const create = async (name) => {
-  console.log('name', name);
   const categories = await Category.create({ name });
   return categories;
 };
