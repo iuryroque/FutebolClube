@@ -56,7 +56,10 @@ const destroy = async (req, res, next) => {
   try {
   const { userId } = req;
   const { id } = req.params;
-  await PostsService.destroy(userId, id);
+  const post = await PostsService.destroy(userId, id);
+  if (!post) {
+    return res.status(401).json({ message: 'Unauthorized user' });
+  }
   return res.status(204).json();
   } catch (error) {
     next(error);

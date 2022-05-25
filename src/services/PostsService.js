@@ -43,11 +43,12 @@ const getById = async (userId, Id) => {
 };
 
 const destroy = async (userId, id) => {
-  const post = await BlogPost.findOne({ where: { id } });
-  console.log(id);
-  console.log(post);
-  const posts = await BlogPost.destroy({ where: { userId, id } });
-  return posts;
+  const { dataValues } = await BlogPost.findOne({ where: { id } });
+  if (dataValues.userId === userId) {
+    const posts = await BlogPost.destroy({ where: { userId, id } });
+    return posts;
+  }
+  return false;
 };
 
 module.exports = {
