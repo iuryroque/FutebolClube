@@ -84,12 +84,13 @@ const expiredOrIvalidToken = async (req, res, next) => {
   }
 };
 
-const existPost = async (req, res, next) => {
+const PostNotExist = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { userId } = req;
-    const post = await ValidateService.existPost(userId, id);
-    res.status(404).json(post);
+    const post = await ValidateService.PostNotExist(id);
+    if (!post) {
+      res.status(404).json({ message: 'Post does not exist' });
+    }
     next();
   } catch (error) {
     return (error);
@@ -101,6 +102,6 @@ module.exports = {
   checkEmailExist,
   existsToken,
   expiredOrIvalidToken,
-  existPost,
+  PostNotExist,
   checkEmpty,
 };
