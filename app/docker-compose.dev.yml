@@ -23,10 +23,8 @@ services:
     command: npm run dev
     volumes: 
       - ./backend/src:/app-backend/src
-<<<<<<< HEAD
     platform: linux/x86_64
-=======
->>>>>>> ab667bde4d18f0f1c3f16a84d19995124960a4f2
+
     depends_on:
       db:
         condition: service_healthy
