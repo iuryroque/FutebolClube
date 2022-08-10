@@ -27,7 +27,7 @@ module.exports = {
       },
       in_progress: {
         allowNull: false,
-        type: Sequelize.STRING(5),
+        type: Sequelize.BOOLEAN,
       },
     });
   },
@@ -59,7 +59,7 @@ module.exports = {
       },
       in_progress: {
         allowNull: false,
-        type: Sequelize.STRING(5),
+        type: Sequelize.BOOLEAN,
       },
     });
   },

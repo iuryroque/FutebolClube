@@ -1,15 +1,31 @@
 import { Request, Response, NextFunction } from 'express';
+import StatusCodes from '../utils/StatusCodes';
+import LoginServices from '../services/LoginServices';
+import ValidationMessages from '../utils/ValidationMessages';
 
-interface Login {
-  email: string;
-  password: string;
-}
 
 const getUserLogin = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    console.log(req.body);
+    const user = await LoginServices.getUserLogin(req.body)
     
-    return res.status(200).json({ message: req.body });
+    if (!user) {
+      return res.status(StatusCodes.Unauthorized)
+        .json({ message: ValidationMessages.Login.InvalidUEmailAndPassword });
+    }
+    
+    return res.status(StatusCodes.OK).json({ token: user });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getUserRole = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    console.log('req.header', req.headers);
+    const role = await LoginServices.getUserRole(req.headers)
+    
+    
+    return res.status(StatusCodes.OK).json({ role });
   } catch (error) {
     next(error);
   }
@@ -17,4 +33,5 @@ const getUserLogin = async (req: Request, res: Response, next: NextFunction) => 
 
 export default {
   getUserLogin,
+  getUserRole,
 };
