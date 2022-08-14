@@ -1,5 +1,5 @@
 import Teams from '../database/models/TeamsModel';
-import ILogin from '../interfaces/index';
+import ILogin, { ITeams } from '../interfaces/index';
 import { compareSync }  from 'bcryptjs' ; 
 import { generateToken, verifyToken } from '../utils/Token';
 
@@ -8,6 +8,14 @@ const getAllTeams = async () => {
 
   return teams;
 }
+
+// const getAllTeamsByMatches = async ():Promise<> => {
+//   const teams = await Teams.findAll().success(function (projects) {
+//     // project.workers is already populated here
+// });
+
+//   return teams;
+// }
 
 const getTeamById = async (params: any) => {
   

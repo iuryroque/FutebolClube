@@ -13,3 +13,25 @@ export interface ICreateMatches {
   homeTeamGoals: number,
   awayTeamGoals: number,
 }
+export interface ITeams {
+  id: number, 
+  teamName: number, 
+}
+
+export interface ITable {
+  goalsFavor: number, 
+  goalsOwn: number, 
+}
+
+export interface ITableBoard {
+  name: string,
+  totalPoints: number,
+  totalGames: number,
+  totalVictories: number,
+  totalDraws: number,
+  totalLosses: number,
+  goalsBalance: number,
+  efficiency: number,
+  goalsFavor: number, 
+  goalsOwn: number,
+}
