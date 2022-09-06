@@ -24,7 +24,6 @@ const getUserRole = async (req: Request, res: Response, next: NextFunction) => {
     console.log('req.header', req.headers);
     const role = await LoginServices.getUserRole(req.headers)
     
-    
     return res.status(StatusCodes.OK).json({ role });
   } catch (error) {
     next(error);
