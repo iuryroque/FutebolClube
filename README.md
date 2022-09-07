@@ -1,7 +1,8 @@
 # 🚧 README em construção 🚧
 
 Nesse projeto foi feito por mim a parte de backend e a parte de front foi disponibilizado por a trybe para os estudos de backend fossem acelerados!
-O desenvolvimento desse backend pode ser encontrado na pasta /app/backend
+
+Os Endpoints para a utilização estão no arquivo EndPoints_ThunderClients.json ou EndPoints_Postman.json podendo ser importado para teste nos dois softwares;
 
 <!-- Olá, Tryber!
 
