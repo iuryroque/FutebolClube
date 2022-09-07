@@ -1,5 +1,7 @@
 # 🚧 README em construção 🚧
 
+Os Endpoints para a utilização estão no arquivo EndPoints_ThunderClients.json ou EndPoints_Postman.json podendo ser importado para teste nos dois softwares;
+
 <!-- Olá, Tryber!
 
 Esse é apenas um arquivo inicial para o README do seu projeto.
