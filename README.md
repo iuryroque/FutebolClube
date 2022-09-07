@@ -1,5 +1,7 @@
 # 🚧 README em construção 🚧
 
+Nesse projeto foi feito por mim a parte de backend e a parte de front foi disponibilizado por a trybe para os estudos de backend fossem acelerados!
+
 <!-- Olá, Tryber!
 
 Esse é apenas um arquivo inicial para o README do seu projeto.
